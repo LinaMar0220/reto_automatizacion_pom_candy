@@ -9,7 +9,7 @@ public class TematicaFiestaStep {
     TematicaFiestaPage tematicaFiestaPage;
 
     @Step
-    public void seleccionarTematicaFiesta(String tematica){
+    public void seleccionarTematicaFiesta(String tematica) {
         tematicaFiestaPage.SeleccionarTemaZombie(tematica);
     }
 

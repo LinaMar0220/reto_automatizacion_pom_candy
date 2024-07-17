@@ -1,12 +1,12 @@
 package co.inglina.pages;
 
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
-import static co.inglina.utils.Constantes.*;
+public class InformacionPage extends BasePage {
+    @FindBy(xpath = "//iframe[contains(@id,'frame')]")
+    WebElementFacade iframeListaDesplegable;
 
-public class InformacionPage extends TematicaFiestaPage{
     //@FindBy(xpath = "//select[@id='guests']//option[@value='1']")
     @FindBy(id = "guests")
     WebElementFacade selectAcompanante;
@@ -21,22 +21,23 @@ public class InformacionPage extends TematicaFiestaPage{
     WebElementFacade linkIr;
 
     public void SeleccionarAcompanante(String numeroAcompanante){
-        selectAcompanante.click();
-        selectAcompanante.selectByValue("1");
+        iframeListaDesplegable.waitUntilPresent();
+        cambiarIframe(iframeListaDesplegable);
+        selectAcompanante.selectByValue(numeroAcompanante);
+        regresarDelFrame();
     }
 
-    public void ingresarEmail(String email){
+    public void ingresarEmail(String email) {
+        inputemail.waitUntilPresent();
         inputemail.sendKeys(email);
-               // .type("pruebas@gmail.com");
+        // .type("pruebas@gmail.com");
     }
 
-    public void enviarInformacion(){
-        //buttonEnviar.waitUntilClickable();
-        buttonEnviar.click();
+    public void enviarInformacion() {
+       buttonEnviar.click();
     }
 
-    public void ir(){
-        //linkIr.waitUntilClickable();
+    public void ir() {
         linkIr.click();
     }
 }

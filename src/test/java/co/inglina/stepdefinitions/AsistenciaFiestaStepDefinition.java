@@ -39,15 +39,20 @@ public class AsistenciaFiestaStepDefinition {
         inicioStep.seleccionarMenuCandy();
     }
 
-    @And("selecciona el tipo de fiesta como anfitrion")
+   @And("selecciona el tipo de fiesta como anfitrion")
     public void seleccionaElTipoDeFiestaComoAnfitrion() {
         tipoFiestaStep.seleccionarTipoFiesta();
+    }
+
+    @And("selecciona el tipo de fiesta como invitado")
+    public void seleccionaElTipoDeFiestaComoInvitado() { tipoFiestaStep.seleccionarInvitado();
     }
 
     @When("seleccione la tematica {word}")
     public void seleccioneLaTematica(String tematica) {
         tematicaFiestaStep.seleccionarTematicaFiesta(tematica);
     }
+
     @And("diligencie la informacion requerida")
     public void diligencieLaInformacionRequerida(List<Map<String, String>> infoUsuario) {
         informacionStep.indicarCantidadAcompanantes(infoUsuario.get(0).get("numeroAcompanante"));
@@ -55,6 +60,7 @@ public class AsistenciaFiestaStepDefinition {
         informacionStep.enviarInfo();
         informacionStep.masInformacion();
     }
+
     @Then("vizualiza el siguiente mensaje {string}")
     public void vizualizaElSiguienteMensaje(String mensaje) {
         fiestaStep.validarFiestaLista(mensaje);

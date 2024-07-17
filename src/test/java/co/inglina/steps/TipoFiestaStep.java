@@ -9,7 +9,9 @@ public class TipoFiestaStep {
     TipoFiestaPage tipoFiestaPage;
 
     @Step
-    public void seleccionarTipoFiesta(){
+    public void seleccionarTipoFiesta() {
         tipoFiestaPage.seleccionarFiestaTipoAnfitrion();
     }
+
+    public void seleccionarInvitado(){tipoFiestaPage.seleccionarFiestaTipoInvitado();}
 }

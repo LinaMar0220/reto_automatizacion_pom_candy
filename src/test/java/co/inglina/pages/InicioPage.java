@@ -10,12 +10,12 @@ public class InicioPage extends BasePage {
     @FindBy(xpath = "//a[@href='/halloween-party' and @data-ux= 'NavLink']")
     WebElementFacade linkHalloweenParty;
 
-    public void cerrarPopUp(){
+    public void cerrarPopUp() {
         buttonPopUp.waitUntilClickable();
         buttonPopUp.click();
     }
 
-    public void seleccionarMenu(){
+    public void seleccionarMenu() {
         linkHalloweenParty.click();
     }
 

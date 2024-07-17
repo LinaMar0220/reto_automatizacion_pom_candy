@@ -9,18 +9,19 @@ public class InformacionStep {
     InformacionPage informacionPage;
 
     @Step
-    public void indicarCantidadAcompanantes(String numeroAcompanante){
+    public void indicarCantidadAcompanantes(String numeroAcompanante) {
         informacionPage.SeleccionarAcompanante(numeroAcompanante);
     }
 
-    public void escribirElCorreo(String email){
+    public void escribirElCorreo(String email) {
         informacionPage.ingresarEmail(email);
     }
 
-    public void enviarInfo(){
+    public void enviarInfo() {
         informacionPage.enviarInformacion();
     }
-    public void masInformacion(){
+
+    public void masInformacion() {
         informacionPage.ir();
     }
 }

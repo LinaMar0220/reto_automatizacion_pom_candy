@@ -9,17 +9,17 @@ public class InicioStep {
     InicioPage inicioPage;
 
     @Step
-    public void configurarNavegador(){
+    public void configurarNavegador() {
         inicioPage.maximizarNavegador();
         inicioPage.open();
 
     }
 
-    public void cerrarVentanaEmergente(){
+    public void cerrarVentanaEmergente() {
         inicioPage.cerrarPopUp();
     }
 
-    public void seleccionarMenuCandy(){
+    public void seleccionarMenuCandy() {
         inicioPage.seleccionarMenu();
     }
 }

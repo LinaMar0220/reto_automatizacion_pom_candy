@@ -10,6 +10,6 @@ public class FiestaStep {
 
     @Step
     public void validarFiestaLista(String mensaje) {
-        fiestaPage.validarFiesta(mensaje);
+        fiestaPage.vFiesta(mensaje);
     }
 }
